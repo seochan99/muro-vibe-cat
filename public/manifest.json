@@ -1,27 +1,26 @@
 {
-  "name": "물어봐이브 (Mureo-Vibe)",
+  "name": "물어봐이브 - 고양이 AI 어시스턴트",
   "short_name": "물어봐이브",
-  "description": "귀여운 고양이 AI가 냥~ 하고 답해주는 재미있는 AI 챗봇 서비스",
+  "description": "귀여운 고양이 AI와 함께하는 질문 답변 서비스",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#f39c12",
-  "orientation": "portrait-primary",
   "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
     {
       "src": "/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
-  ],
-  "categories": ["entertainment", "productivity"],
-  "lang": "ko",
-  "dir": "ltr"
+  ]
 } 

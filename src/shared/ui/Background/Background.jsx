@@ -1,6 +1,6 @@
-import React, { useRef, useMemo, useState } from 'react';
+ import React, { useRef, useMemo, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Text3D, Sphere, Box, OrbitControls, Environment } from '@react-three/drei';
+import { Float, Text3D, Sphere, Box, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 // 고양이 발자국 컴포넌트
@@ -299,7 +299,7 @@ const RotatingCatToy = ({ position, color = "#e74c3c" }) => {
   const meshRef = useRef();
   const [hovered, setHovered] = useState(false);
   
-  useFrame((state) => {
+  useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.x += 0.02;
       meshRef.current.rotation.y += 0.03;
@@ -639,10 +639,10 @@ const Background = () => {
         camera={{ position: [0, 0, 8], fov: 75 }}
         style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
       >
-        <ambientLight intensity={0.4} />
-        <pointLight position={[10, 10, 10]} intensity={0.5} />
-        <pointLight position={[-10, -10, -10]} intensity={0.3} />
-        <Environment preset="sunset" />
+        <ambientLight intensity={0.6} />
+        <pointLight position={[10, 10, 10]} intensity={0.8} color="#f39c12" />
+        <pointLight position={[-10, -10, -10]} intensity={0.4} color="#e67e22" />
+        <pointLight position={[0, 10, 0]} intensity={0.3} color="#ffffff" />
         <BackgroundScene />
         <OrbitControls 
           enableZoom={false}
