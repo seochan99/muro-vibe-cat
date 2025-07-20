@@ -1,0 +1,288 @@
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  position: relative;
+}
+
+.textarea-label-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: slideInDown 0.6s ease-out;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.textarea-cat-icon {
+  font-size: 20px;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { 
+    transform: translateY(0); 
+  }
+  40% { 
+    transform: translateY(-3px); 
+  }
+  60% { 
+    transform: translateY(-1px); 
+  }
+}
+
+.textarea-label {
+  font-weight: 700;
+  color: #333;
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.textarea-field-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.8) 100%);
+  border-radius: 16px;
+  padding: 4px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.8s ease-out;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.textarea-field-wrapper:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+}
+
+.textarea-field {
+  width: 80%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+  color: #2c3e50;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  margin: 0 auto;
+}
+
+.textarea-field::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+  transition: all 0.3s ease;
+}
+
+.textarea-field:focus {
+  background: rgba(248, 249, 250, 0.95);
+  box-shadow: 
+    0 0 0 3px rgba(243, 156, 18, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(243, 156, 18, 0.4);
+  transform: scale(1.02);
+}
+
+.textarea-field:focus::placeholder {
+  color: #bdc3c7;
+  transform: translateX(5px);
+}
+
+.textarea-field:disabled {
+  background: rgba(236, 240, 241, 0.8);
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.textarea-field--error {
+  background: rgba(231, 76, 60, 0.03);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.textarea-field--error:focus {
+  background: rgba(231, 76, 60, 0.05);
+  box-shadow: 
+    0 0 0 3px rgba(231, 76, 60, 0.15),
+    inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.textarea-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.textarea-cat-paw {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #f39c12 0%, #e67e22 100%);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pawFloat 3s ease-in-out infinite;
+}
+
+.textarea-cat-paw.left {
+  top: 15px;
+  left: 15px;
+  animation-delay: 0s;
+}
+
+.textarea-cat-paw.right {
+  bottom: 15px;
+  right: 15px;
+  animation-delay: 1.5s;
+}
+
+@keyframes pawFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+.textarea-error {
+  color: #e74c3c;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .textarea-field {
+    width: 90%;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+  
+  .textarea-label {
+    font-size: 14px;
+  }
+  
+  .textarea-cat-icon {
+    font-size: 18px;
+  }
+  
+  .textarea-cat-paw {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .textarea-cat-paw.left {
+    top: 12px;
+    left: 12px;
+  }
+  
+  .textarea-cat-paw.right {
+    bottom: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .textarea-field {
+    width: 95%;
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .textarea-label {
+    font-size: 13px;
+  }
+  
+  .textarea-cat-icon {
+    font-size: 16px;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .textarea-field-wrapper {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 73, 94, 0.8) 100%);
+  }
+  
+  .textarea-field {
+    color: #ecf0f1;
+    background: rgba(44, 62, 80, 0.6);
+  }
+  
+  .textarea-field:focus {
+    background: rgba(44, 62, 80, 0.8);
+    box-shadow: 
+      0 0 0 3px rgba(243, 156, 18, 0.2),
+      inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+  }
+  
+  .textarea-field::placeholder {
+    color: #95a5a6;
+  }
+  
+  .textarea-label {
+    color: #333;
+  }
+  
+  .textarea-field-wrapper:hover {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 73, 94, 0.9) 100%);
+  }
+} 

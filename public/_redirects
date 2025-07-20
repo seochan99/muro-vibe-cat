@@ -1,0 +1,10 @@
+# SPA 라우팅 지원
+/*    /index.html   200
+
+# 보안 리다이렉트
+/.env*  /404.html  404
+/package.json  /404.html  404
+/package-lock.json  /404.html  404
+
+# 404 페이지 처리
+/404  /index.html  200 

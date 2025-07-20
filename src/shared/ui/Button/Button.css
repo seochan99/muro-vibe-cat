@@ -1,0 +1,71 @@
+여기스타일들도 
+.btn {
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.btn--primary {
+  background: #34495e;
+  color: white;
+  box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3);
+}
+
+.btn--primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 73, 94, 0.4);
+  background: #2c3e50;
+}
+
+.btn--secondary {
+  background: #ecf0f1;
+  color: #2c3e50;
+  border: 2px solid #bdc3c7;
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: #bdc3c7;
+  border-color: #95a5a6;
+}
+
+.btn--success {
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn--success:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: #000000;
+  color: #fff;
+}
+
+/* Sizes */
+.btn--small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.btn--medium {
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btn--large {
+  padding: 16px 32px;
+  font-size: 18px;
+} 

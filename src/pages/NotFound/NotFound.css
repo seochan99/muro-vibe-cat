@@ -1,0 +1,384 @@
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.notfound-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.notfound-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 고양이 얼굴 애니메이션 */
+.notfound-cat {
+  margin-bottom: 40px;
+  animation: catBounce 2s ease-in-out infinite;
+}
+
+@keyframes catBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cat-face {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 고양이 귀 */
+.cat-ears {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.cat-ear {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid #d35400;
+  animation: earWiggle 3s ease-in-out infinite;
+}
+
+.cat-ear.left {
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.cat-ear.right {
+  right: 20px;
+  animation-delay: 1.5s;
+}
+
+@keyframes earWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* 고양이 눈 */
+.cat-eyes {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.cat-eye {
+  width: 20px;
+  height: 20px;
+  background: #2c3e50;
+  border-radius: 50%;
+  position: relative;
+  animation: blink 4s ease-in-out infinite;
+}
+
+.cat-pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 50%;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* 고양이 코 */
+.cat-nose {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 6px;
+  background: #e74c3c;
+  border-radius: 50%;
+}
+
+/* 고양이 입 */
+.cat-mouth {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 8px;
+  border: 2px solid #2c3e50;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+}
+
+/* 고양이 수염 */
+.cat-whiskers {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 40px;
+}
+
+.whisker {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #95a5a6;
+  border-radius: 1px;
+  animation: whiskerTwitch 2s ease-in-out infinite;
+}
+
+.whisker.left-1 { left: -40px; top: 5px; transform: rotate(-15deg); }
+.whisker.left-2 { left: -40px; top: 15px; transform: rotate(-5deg); }
+.whisker.left-3 { left: -40px; top: 25px; transform: rotate(5deg); }
+.whisker.right-1 { right: -40px; top: 5px; transform: rotate(15deg); }
+.whisker.right-2 { right: -40px; top: 15px; transform: rotate(5deg); }
+.whisker.right-3 { right: -40px; top: 25px; transform: rotate(-5deg); }
+
+@keyframes whiskerTwitch {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* 텍스트 스타일 */
+.notfound-text {
+  margin-bottom: 40px;
+}
+
+.notfound-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #e74c3c;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: errorPulse 2s ease-in-out infinite;
+}
+
+@keyframes errorPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.error-message {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.notfound-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.notfound-suggestions {
+  background: rgba(243, 156, 18, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border-left: 4px solid #f39c12;
+}
+
+.notfound-suggestions h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.notfound-suggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notfound-suggestions li {
+  color: #7f8c8d;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.notfound-suggestions li::before {
+  content: '🐾';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 버튼 스타일 */
+.notfound-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  border: none;
+  color: white;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(243, 156, 18, 0.3);
+}
+
+.back-btn {
+  background: rgba(52, 73, 94, 0.1);
+  border: 2px solid #34495e;
+  color: #34495e;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #34495e;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 푸터 */
+.notfound-footer {
+  padding-top: 24px;
+  border-top: 1px solid rgba(189, 195, 199, 0.3);
+}
+
+.notfound-footer p {
+  color: #95a5a6;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .notfound-container {
+    padding: 20px 16px;
+  }
+  
+  .notfound-content {
+    padding: 30px 20px;
+  }
+  
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .error-message {
+    font-size: 1.2rem;
+  }
+  
+  .notfound-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home-btn,
+  .back-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .cat-face {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .cat-ear {
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 24px solid #d35400;
+  }
+  
+  .cat-eye {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .cat-pupil {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-content {
+    padding: 20px 16px;
+  }
+  
+  .error-code {
+    font-size: 3rem;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+  }
+  
+  .notfound-description {
+    font-size: 1rem;
+  }
+  
+  .cat-face {
+    width: 80px;
+    height: 80px;
+  }
+} 

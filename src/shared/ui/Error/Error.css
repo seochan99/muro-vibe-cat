@@ -1,0 +1,62 @@
+.error-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.error-message {
+  margin: 0 0 16px 0;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.error-retry-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.error-retry-btn:hover {
+  background: #5a6fd8;
+}
+
+/* Variants */
+.error--error {
+  border-left: 4px solid #dc3545;
+  background: #fff5f5;
+}
+
+.error--warning {
+  border-left: 4px solid #ffc107;
+  background: #fffbf0;
+}
+
+.error--info {
+  border-left: 4px solid #17a2b8;
+  background: #f0f8ff;
+} 
